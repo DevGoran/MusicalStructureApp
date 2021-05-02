@@ -1,5 +1,6 @@
 package com.example.musicalstructureapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -48,6 +49,12 @@ public class TracksActivity extends AppCompatActivity {
         // Make the ListView use the SongAdapter we created above, so that the
         // ListView will display list items for each Songs in the list.
         listView.setAdapter(adapter);
+
+        // TODO: How to pass the selected object's values to MusicPlayerActivity, retrieve the data of the objects and set them into the TextViews and ImageViews in the activity_music_player.xml?
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            Intent openPlayer = new Intent(TracksActivity.this, MusicPlayerActivity.class);
+            startActivity(openPlayer);
+        });
 
     }
 }
