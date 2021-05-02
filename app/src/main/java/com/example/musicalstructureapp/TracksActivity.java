@@ -1,8 +1,9 @@
 package com.example.musicalstructureapp;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
@@ -36,13 +37,17 @@ public class TracksActivity extends AppCompatActivity {
         songs.add(new Songs("NF", "The Search", "Trauma", R.drawable.cover_sample));
         songs.add(new Songs("NF", "The Search", "Time (edit)", R.drawable.cover_sample));
 
+        // Create an SongAdapter, whose data source is a list of Songs. The adapter knows how to create list items for each item in the list.
         SongAdapter adapter = new SongAdapter(this, songs);
 
+        // Find the ListView object in the view hierarchy of the Activity.
+        // There should be a ListView with the view ID called activity_tracks_list_view, which is declared in the
+        // activity_tracks.xml layout file.
         ListView listView = findViewById(R.id.activity_tracks_list_view);
 
+        // Make the ListView use the SongAdapter we created above, so that the
+        // ListView will display list items for each Songs in the list.
         listView.setAdapter(adapter);
 
     }
-    // TODO: Create an ArrayList of Songs objects and add it to R.id.activity_tracks_list_view ListView in activity_tracks.
-
 }
