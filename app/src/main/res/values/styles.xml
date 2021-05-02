@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Style for control button's in music_player_activity. -->
+    <style name="control_button">
+        <item name="android:layout_width">@dimen/control_button</item>
+        <item name="android:layout_height">@dimen/control_button</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:layout_marginTop">@dimen/margin_top_control_buttons</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_below">@id/currentAlbumName_text_view</item>
+    </style>
+
+    <!-- Style for album cover in music_player_activity. -->
+    <style name="album_cover">
+        <item name="android:layout_width">@dimen/cover_size</item>
+        <item name="android:layout_height">@dimen/cover_size</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">@dimen/margin_top_cover</item>
+    </style>
+
+    <!-- Style for the track name in music_player_activity. -->
+    <style name="track_name">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">@dimen/margin_top_track_name</item>
+        <item name="android:textSize">@dimen/track_name_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Style for the album name in music_player_activity. -->
+    <style name="album_name">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">@dimen/margin_top_album</item>
+        <item name="android:textSize">@dimen/album_text_size</item>
+    </style>
+
+    <!-- Style for the artist's name in music_player_activity. -->
+    <style name="artist_name">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">@dimen/margin_top_artist</item>
+        <item name="android:textSize">@dimen/artist_text_size</item>
+    </style>
+
+    <!-- Style for "All your tracks" button view in activity_main. -->
+    <style name="activity_main_tracks">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">@dimen/tracks_activity_header</item>
+        <item name="android:background">@color/green</item>
+        <item name="android:padding">@dimen/padding_activity_main_options</item>
+    </style>
+
+    <!-- Style for tracks_layout.xml track name. -->
+    <style name="tracks_layout_song_info_one">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/tracks_layout_track_name_size</item>
+        <item name="android:paddingStart">@dimen/padding_start_8_tracks_layout</item>
+    </style>
+
+    <!-- Style for tracks_layout.xml album and artist name. -->
+    <style name="tracks_layout_song_info_two">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/padding_start_8_tracks_layout</item>
+    </style>
+</resources>
