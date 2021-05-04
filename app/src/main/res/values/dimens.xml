@@ -14,6 +14,6 @@
     <dimen name="padding_activity_main_options">8dp</dimen>
     <dimen name="padding_start_8_tracks_layout">8dp</dimen>
     <dimen name="tracks_layout_track_name_size">20sp</dimen>
-    <dimen name="tracks_layout_play_button_size">66dp</dimen>
-    <dimen name="tracks_layout_album_cover_size">66dp</dimen>
+    <dimen name="tracks_layout_play_button_size">76dp</dimen>
+    <dimen name="tracks_layout_album_cover_size">76dp</dimen>
 </resources>
