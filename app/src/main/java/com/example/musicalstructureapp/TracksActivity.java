@@ -50,9 +50,10 @@ public class TracksActivity extends AppCompatActivity {
         // ListView will display list items for each Songs in the list.
         listView.setAdapter(adapter);
 
-        // TODO: How to pass the selected object's values to MusicPlayerActivity, retrieve the data of the objects and set them into the TextViews and ImageViews in the activity_music_player.xml?
+        // Opens new Activity on click and passes clicked object to MusicPlayerActivity.
         listView.setOnItemClickListener((parent, view, position, id) -> {
             Intent openPlayer = new Intent(TracksActivity.this, MusicPlayerActivity.class);
+            openPlayer.putExtra("song", songs.get(position));
             startActivity(openPlayer);
         });
 

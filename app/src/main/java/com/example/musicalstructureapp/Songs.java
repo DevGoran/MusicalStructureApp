@@ -1,6 +1,9 @@
 package com.example.musicalstructureapp;
 
-public class Songs {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Songs implements Parcelable {
 
     /**
      * Artist's name.
@@ -64,4 +67,39 @@ public class Songs {
         return mCover;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    /**
+     * Write object's data to the passed-in Parcel.
+     */
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(mArtist);
+        parcel.writeString(mAlbum);
+        parcel.writeString(mTrack);
+        parcel.writeInt(mCover);
+    }
+
+    /**
+     * This is used to regenerate the object.
+     */
+    public static final Parcelable.Creator<Songs> CREATOR = new Parcelable.Creator<Songs>() {
+        public Songs createFromParcel(Parcel in) {
+            return new Songs(in);
+        }
+
+        public Songs[] newArray(int size) {
+            return new Songs[size];
+        }
+    };
+
+    private Songs(Parcel in) {
+        mArtist = in.readString();
+        mAlbum = in.readString();
+        mTrack = in.readString();
+        mCover = in.readInt();
+    }
 }
