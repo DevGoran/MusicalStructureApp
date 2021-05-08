@@ -21,40 +21,49 @@ public class SongAdapter extends ArrayAdapter<Songs> {
         super(context, 0, songs);
     }
 
+    /**
+     * ViewHolder class.
+     */
+    static class ViewHolder {
+        private TextView trackName;
+        private TextView artistName;
+        private TextView albumName;
+        private ImageView cover;
+    }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // Check if an existing view is being reused, otherwise inflate the view
-        View listItemView = convertView;
-        if (listItemView == null) {
-            listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.tracks_layout, parent, false);
+
+        ViewHolder holder;
+        // Check if an existing view is being reused, otherwise inflate the view.
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.tracks_layout, parent, false);
+            holder = new ViewHolder();
+            holder.trackName = convertView.findViewById(R.id.track_name_track_overview);
+            holder.artistName = convertView.findViewById(R.id.artist_name_track_overview);
+            holder.albumName = convertView.findViewById(R.id.album_name_track_overview);
+            holder.cover = convertView.findViewById(R.id.cover_track_overview);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
 
-        // Get the {@link Songs} object located at this position in the list
+        // Get the Songs object located at this position in the list
         Songs currentSong = getItem(position);
 
-        // Find the TextView in the tracks_layout.xml layout with the ID track_name_track_overview.
-        TextView trackName = (TextView) listItemView.findViewById(R.id.track_name_track_overview);
         // Get the track name from the currentSong object and set it.
-        trackName.setText(currentSong.getTrack());
+        holder.trackName.setText(currentSong.getTrack());
 
-        // Find the TextView in the tracks_layout.xml layout with the ID artist_name_track_overview.
-        TextView artistName = (TextView) listItemView.findViewById(R.id.artist_name_track_overview);
         // Get the artist name from the currentSong object and set it.
-        artistName.setText(currentSong.getArtist());
+        holder.artistName.setText(currentSong.getArtist());
 
-        // Find the TextView in the tracks_layout.xml layout with the ID album_name_track_overview.
-        TextView albumName = (TextView) listItemView.findViewById(R.id.album_name_track_overview);
         // Get the album name from the currentSong object and set it.
-        albumName.setText(currentSong.getAlbum());
+        holder.albumName.setText(currentSong.getAlbum());
 
-        // Find the TextView in the tracks_layout.xml layout with the ID cover_track_overview.
-        ImageView cover = (ImageView) listItemView.findViewById(R.id.cover_track_overview);
         // Get the cover from the currentSong object and set it.
-        cover.setImageResource(currentSong.getCover());
+        holder.cover.setImageResource(currentSong.getCover());
 
-        // Return the whole list item layout (containing 2 TextViews) so that it can be shown in
-        // the ListView.
-        return listItemView;
+        // Return the whole layout (containing 3 TextViews and 1 ImageView) so that it can be shown in the ListView.
+        return convertView;
     }
 }
