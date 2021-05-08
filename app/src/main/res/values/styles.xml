@@ -4,7 +4,7 @@
     <style name="control_button">
         <item name="android:layout_width">@dimen/control_button</item>
         <item name="android:layout_height">@dimen/control_button</item>
-        <item name="android:scaleType">fitXY</item>
+        <item name="android:scaleType">centerCrop</item>
         <item name="android:layout_marginTop">@dimen/margin_top_control_buttons</item>
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:layout_below">@id/currentAlbumName_text_view</item>
